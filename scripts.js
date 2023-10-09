@@ -31,14 +31,17 @@ $(document).ready(function () {
     function onRabbitClick() {
         $(rabbit).hide();
         points++;
+
+        //increasing the remaining time by 80 milliseconds when the user clicks on a rabbit
         timeleft += 80;
         $(".score").text(`Score: ${points}`);
         init();
     }
 
-
+    //a function that counts down the timeleft
     function timer() {
         interval = setInterval(() => {
+            //If the time is less than or equal to 0. Stop the timer function
             if (timeleft <= 0) {
                 stopTimer();
             } else {
